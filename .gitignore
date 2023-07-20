@@ -164,6 +164,3 @@ api_key.txt
 
 #VScode
 .vscode/
-
-#Local pylint config
-.pylintrc
