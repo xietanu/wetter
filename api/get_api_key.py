@@ -1,3 +1,4 @@
+"""Gets the API key from a text file and returns it as a string."""
 API_KEY_FILEPATH = "api_key.txt"
 
 
