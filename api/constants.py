@@ -1,3 +1,4 @@
+"""Constants for the Weather API."""
 URL_BASE = "http://api.weatherapi.com/v1"
 CURRENT_WEATHER_ENDPOINT = "/current.json"
 FORECAST_ENDPOINT = "/forecast.json"
