@@ -9,4 +9,7 @@ def get_api_key(filepath: str = API_KEY_FILEPATH) -> str:
     return api_key
 
 
-API_KEY = get_api_key(API_KEY_FILEPATH)
+try:
+    API_KEY = get_api_key(API_KEY_FILEPATH)
+except FileNotFoundError:
+    API_KEY = "NULL"
