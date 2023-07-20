@@ -161,3 +161,6 @@ cython_debug/
 
 #API key
 api_key.txt
+
+#VScode
+.vscode/
