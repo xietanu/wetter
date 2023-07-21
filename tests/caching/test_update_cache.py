@@ -21,12 +21,18 @@ def test_update_cache():
         cache_location="./tests/caching/",
     )
 
-    with open("./tests/caching/test_cache.json", "r", encoding="utf-8") as cache_file:
-        cache_dict = json.load(cache_file)
-
-    assert cache_dict == {
+    expected_cache_dict = {
         "location": "London",
         "date": "2023-01-01",
         "temperature": "10",
         "description": "Sunny",
     }
+
+    with open(
+        "./tests/caching/test_cache_london.json", "r", encoding="utf-8"
+    ) as cache_file:
+        cache_dict = json.load(cache_file)
+
+    cache_dict.pop("cache_time")
+
+    assert cache_dict == expected_cache_dict
