@@ -1,3 +1,4 @@
+"""Contains the DailyForecast class for representing a daily forecast."""
 import datetime
 
 import protocols

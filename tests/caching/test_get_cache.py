@@ -1,4 +1,3 @@
-import datetime
 import pytest
 from caching import get_cache
 

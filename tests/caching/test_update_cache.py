@@ -1,9 +1,10 @@
 import json
+import os
 
 from caching import update_cache
 
 
-def example_weather_requester(location: str) -> dict[str, str]:
+def example_weather_requester(location: str, **_) -> dict[str, str]:
     """Returns an example weather dictionary."""
     return {
         "location": location,
@@ -32,6 +33,8 @@ def test_update_cache():
         "./tests/caching/test_cache_london.json", "r", encoding="utf-8"
     ) as cache_file:
         cache_dict = json.load(cache_file)
+
+    os.remove("./tests/caching/test_cache_london.json")
 
     cache_dict.pop("cache_time")
 

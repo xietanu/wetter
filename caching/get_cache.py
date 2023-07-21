@@ -1,3 +1,4 @@
+"""Returns the cache as a dictionary."""
 import json
 import datetime
 from typing import Any

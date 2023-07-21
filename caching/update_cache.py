@@ -1,3 +1,4 @@
+"""Updates the cache with the current weather."""
 import datetime
 import json
 import os
@@ -12,6 +13,7 @@ def update_cache(
     location: str,
     weather_requester: protocols.WeatherRequester,
     cache_location: str = "./cache/",
+    **kwargs,
 ):
     """Updates the cache with the current weather."""
     if not os.path.exists(cache_location):
@@ -19,7 +21,7 @@ def update_cache(
 
     cache_file_path = cache_location + cache_name + "_" + location.lower() + ".json"
 
-    weather_dict = weather_requester(location)
+    weather_dict = weather_requester(location, **kwargs)
 
     weather_dict["cache_time"] = str(datetime.datetime.now())
 
@@ -36,10 +38,11 @@ def update_current_weather_cache(location: str):
     )
 
 
-def update_forecast_cache(location: str):
+def update_forecast_cache(location: str, days: int):
     """Updates the forecast cache."""
     update_cache(
         cache_name=caching.FORECAST_CACHE_NAME,
         location=location,
         weather_requester=api.get_forecast,
+        days=days,
     )

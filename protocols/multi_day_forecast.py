@@ -1,3 +1,4 @@
+"""Defines the MultiDayForecast protocol."""
 from __future__ import annotations
 from typing import Protocol
 
@@ -6,6 +7,8 @@ import protocols
 
 
 class MultiDayForecast(Protocol):
+    """Forecast for multiple days."""
+
     def get_available_dates(self) -> list[datetime.date]:  # type: ignore
         """Returns a list of available dates for the forecast."""
 
