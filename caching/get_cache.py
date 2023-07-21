@@ -4,6 +4,7 @@ from typing import Any
 
 import caching
 
+
 def get_cache(
     cache_name: str,
     location: str,
@@ -21,6 +22,7 @@ def get_cache(
 
     return cache_time, cache_dict
 
+
 def get_current_weather_cache(
     location: str,
     cache_location: str = "./cache/",
@@ -31,6 +33,7 @@ def get_current_weather_cache(
         location=location,
         cache_location=cache_location,
     )
+
 
 def get_forecast_cache(
     location: str,

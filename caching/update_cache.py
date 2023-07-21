@@ -20,7 +20,7 @@ def update_cache(
     cache_file_path = cache_location + cache_name + "_" + location.lower() + ".json"
 
     weather_dict = weather_requester(location)
-    
+
     weather_dict["cache_time"] = str(datetime.datetime.now())
 
     with open(cache_file_path, "w", encoding="utf-8") as cache_file:
