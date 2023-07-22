@@ -34,7 +34,7 @@ def update_current_weather_cache(location: str):
     update_cache(
         cache_name=caching.CURRENT_WEATHER_CACHE_NAME,
         location=location,
-        weather_requester=api.get_current_weather,
+        weather_requester=api.get_current_weather_from_api,
     )
 
 
@@ -43,6 +43,6 @@ def update_forecast_cache(location: str, days: int):
     update_cache(
         cache_name=caching.FORECAST_CACHE_NAME,
         location=location,
-        weather_requester=api.get_forecast,
+        weather_requester=api.get_forecast_from_api,
         days=days,
     )

@@ -7,7 +7,7 @@ import protocols
 import caching
 
 
-def get_weather_dict(
+def get_weather_data(
     cache_name: str,
     location: str,
     invalidation_time_hrs: int,
@@ -58,32 +58,32 @@ def _update_and_get_cache(
     return cache_dict
 
 
-def get_current_weather(
+def get_current_weather_data(
     location: str,
     invalidation_time_hrs: int,
     cache_location: str = "./cache/",
 ) -> dict[str, Any]:
     """Returns the current weather as a dictionary."""
-    return get_weather_dict(
+    return get_weather_data(
         cache_name=caching.CURRENT_WEATHER_CACHE_NAME,
         location=location,
         invalidation_time_hrs=invalidation_time_hrs,
-        weather_requester=api.get_current_weather,
+        weather_requester=api.get_current_weather_from_api,
         cache_location=cache_location,
     )
 
 
-def get_forecast(
+def get_forecast_data(
     location: str,
     invalidation_time_hrs: int,
     cache_location: str = "./cache/",
 ) -> dict[str, Any]:
     """Returns the forecast as a dictionary."""
-    return get_weather_dict(
+    return get_weather_data(
         cache_name=caching.FORECAST_CACHE_NAME,
         location=location,
         invalidation_time_hrs=invalidation_time_hrs,
-        weather_requester=api.get_forecast,
+        weather_requester=api.get_forecast_from_api,
         cache_location=cache_location,
         days=3,
     )
