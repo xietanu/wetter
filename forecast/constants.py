@@ -1,0 +1,7 @@
+"""Constants for the forecast module."""
+CURRENT_WEATHER = "current"
+CONDITION_DESC = "condition"
+TEXT_DESC = "text"
+TEMP_C = "temp_c"
+TEMP_FEELS_LIKE_C = "feelslike_c"
+WIND_KPH = "wind_kph"

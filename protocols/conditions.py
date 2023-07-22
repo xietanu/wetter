@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Condition:
+class Conditions:
     """Represents the weather conditions at a given time."""
 
     description: str
