@@ -15,4 +15,4 @@ def get_current_weather(
         cache_location="./cache/",
     )
 
-    return forecast.get_conditions_from_data(cache_dict[forecast.CURRENT_WEATHER])
+    return forecast.Conditions.from_json(cache_dict[forecast.CURRENT_WEATHER])

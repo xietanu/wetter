@@ -8,9 +8,10 @@ import protocols
 
 class MultiDayForecast(Protocol):
     """Forecast for multiple days."""
+    location: str
 
     def get_available_dates(self) -> list[datetime.date]:  # type: ignore
         """Returns a list of available dates for the forecast."""
-
-    def get_daily_forecast(self, date: datetime.date) -> protocols.DailyForecast:  # type: ignore
+ 
+    def __getitem__(self, key: datetime.date) -> protocols.DailyForecast:  # type: ignore
         """Returns the forecast for a given date."""

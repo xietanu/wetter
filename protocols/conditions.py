@@ -1,9 +1,9 @@
 """Represents the weather conditions at a given time."""
-from dataclasses import dataclass
+
+from typing import Protocol
 
 
-@dataclass
-class Conditions:
+class Conditions(Protocol):
     """Represents the weather conditions at a given time."""
 
     description: str
